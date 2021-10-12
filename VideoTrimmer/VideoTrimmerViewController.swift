@@ -89,6 +89,7 @@ class VideoTrimmerViewController: AssetSelectionViewController {
         cropButton.isEnabled = true
         trimmerView.isHidden = false
         playButton.isEnabled = true
+        trimmerView.maxDuration = 150
         trimmerView.asset = asset
         trimmerView.delegate = self
         addVideoPlayer(with: asset, playerView: playerView)
