@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Li2-ie-4nx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Trimmer View Controller-->
+        <scene sceneID="gYW-d5-XLE">
+            <objects>
+                <viewController storyboardIdentifier="trimmerViewController" id="Li2-ie-4nx" customClass="VideoTrimmerViewController" customModule="PryntTrimmerViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aVL-If-Z3j"/>
+                        <viewControllerLayoutGuide type="bottom" id="3mN-HS-fxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PS8-GU-sqF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-ce-uJS" userLabel="Player View">
+                                <rect key="frame" x="20" y="44" width="374" height="678"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywb-vf-DdF" customClass="TrimmerView" customModule="VideoTrimmer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="778" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vVO-fI-J5c"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHG-LN-hKw" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-ic-AnJ">
+                                        <rect key="frame" x="8" y="5" width="398" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiI-KJ-MSY">
+                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="play.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                                </state>
+                                                <state key="selected" image="pause.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="play:" destination="Li2-ie-4nx" eventType="touchUpInside" id="qNs-8F-reM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLa-bA-Vdb" userLabel="Select Asset Button">
+                                                <rect key="frame" x="135.5" y="0.0" width="127" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="video.fill.badge.plus" catalog="system">
+                                                    <color key="titleColor" systemColor="systemIndigoColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectAsset:" destination="Li2-ie-4nx" eventType="touchUpInside" id="Ab9-ki-XrP"/>
+                                                </connections>
+                                            </button>
+                                            <button toolTip="pwoli sanam" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrd-7R-BqF">
+                                                <rect key="frame" x="270.5" y="0.0" width="127.5" height="34"/>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" systemColor="tintColor"/>
+                                                </state>
+                                                <state key="disabled" title=" "/>
+                                                <connections>
+                                                    <action selector="crop:" destination="Li2-ie-4nx" eventType="touchUpInside" id="6ru-Nx-pzG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="iEu-hD-rKb"/>
+                                    <constraint firstAttribute="trailing" secondItem="bxY-ic-AnJ" secondAttribute="trailing" constant="8" id="nCI-5u-5c0"/>
+                                    <constraint firstItem="bxY-ic-AnJ" firstAttribute="leading" secondItem="AHG-LN-hKw" secondAttribute="leading" constant="8" id="u9E-mB-XpL"/>
+                                    <constraint firstItem="bxY-ic-AnJ" firstAttribute="centerY" secondItem="AHG-LN-hKw" secondAttribute="centerY" id="vdi-xs-CDc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcH-jO-sMY">
+                                <rect key="frame" x="20" y="770" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f30-jF-LWD">
+                                <rect key="frame" x="394" y="770" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4po-HO-eIF"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f30-jF-LWD" firstAttribute="trailing" secondItem="PS8-GU-sqF" secondAttribute="trailingMargin" id="2iZ-bj-YLc"/>
+                            <constraint firstItem="3mN-HS-fxc" firstAttribute="top" secondItem="AHG-LN-hKw" secondAttribute="bottom" id="5RO-c3-tiB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q3P-ce-uJS" secondAttribute="trailing" id="GbJ-Kv-rk5"/>
+                            <constraint firstItem="AHG-LN-hKw" firstAttribute="width" secondItem="PS8-GU-sqF" secondAttribute="width" id="Gmy-UJ-mdu"/>
+                            <constraint firstItem="q3P-ce-uJS" firstAttribute="leading" secondItem="PS8-GU-sqF" secondAttribute="leadingMargin" id="Pmq-xL-4Pw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ywb-vf-DdF" secondAttribute="trailing" id="T2q-mf-xw9"/>
+                            <constraint firstItem="Ywb-vf-DdF" firstAttribute="top" secondItem="q3P-ce-uJS" secondAttribute="bottom" constant="56" id="XbS-Ti-WwQ"/>
+                            <constraint firstItem="Ywb-vf-DdF" firstAttribute="leading" secondItem="PS8-GU-sqF" secondAttribute="leadingMargin" id="aLY-FO-2Kj"/>
+                            <constraint firstItem="Ywb-vf-DdF" firstAttribute="top" secondItem="f30-jF-LWD" secondAttribute="bottom" constant="8" symbolic="YES" id="atw-PH-Dfh"/>
+                            <constraint firstItem="AHG-LN-hKw" firstAttribute="centerX" secondItem="PS8-GU-sqF" secondAttribute="centerX" id="iNp-rs-sx1"/>
+                            <constraint firstItem="IcH-jO-sMY" firstAttribute="leading" secondItem="PS8-GU-sqF" secondAttribute="leadingMargin" id="myA-bS-0zy"/>
+                            <constraint firstItem="q3P-ce-uJS" firstAttribute="top" secondItem="aVL-If-Z3j" secondAttribute="bottom" id="s3W-7l-XNn"/>
+                            <constraint firstItem="AHG-LN-hKw" firstAttribute="top" secondItem="Ywb-vf-DdF" secondAttribute="bottom" id="vMF-CB-of1"/>
+                            <constraint firstItem="f30-jF-LWD" firstAttribute="centerY" secondItem="IcH-jO-sMY" secondAttribute="centerY" id="xXM-ZO-UKa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cropButton" destination="lrd-7R-BqF" id="Ivc-2l-ga9"/>
+                        <outlet property="currentTimeLabel" destination="IcH-jO-sMY" id="EjW-Qy-wvb"/>
+                        <outlet property="durationLabel" destination="f30-jF-LWD" id="Bic-2H-h6f"/>
+                        <outlet property="playButton" destination="fiI-KJ-MSY" id="WZm-dG-Mg7"/>
+                        <outlet property="playerView" destination="q3P-ce-uJS" id="Kkq-cR-pRy"/>
+                        <outlet property="selectAssetButton" destination="yLa-bA-Vdb" id="v7n-DR-GZt"/>
+                        <outlet property="trimmerView" destination="Ywb-vf-DdF" id="pqY-Sz-Orh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FsT-xw-8C3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655" y="102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="video.fill.badge.plus" catalog="system" width="128" height="88"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
